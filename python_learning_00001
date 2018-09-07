@@ -1,0 +1,18 @@
+import pymongo
+# Program name: app.py
+# Purpose: Test the connection to a MongoDB, just to see if pgm can connect
+
+#
+# MongoDB session is running at 127.0.0.1:27017
+#
+# Additional files:
+#   requirements.txt
+#     contains the following:
+#       pymongo == 3.7.1
+
+uri = "mongodb://127.0.0.1:27017"
+client = pymongo.MongoClient(uri)
+database = client("my_database")
+collection = database['students']
+
+students = collection.find({})
